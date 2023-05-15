@@ -1,17 +1,17 @@
 import { con } from './connection.js';
 
-export async function inserirProntuario(medico) {
-  const comando = `INSERT INTO prontuario (id_consulta, anamnese, resultado_exames, diagnostico) value (?,?,?, ?)`;
+export async function inserirProntuario(prontuario) {
+  const comando = `INSERT INTO prontuario (id_consulta, anamnese, resultado_exames, diagnostico) value (?,?,?,?)`;
 
   const [resposta] = await con.query(comando, [
     prontuario.id_consulta,
     prontuario.anamnese,
     prontuario.resultado_exames,
-    prontuario.diagnostico
+    prontuario.diagnostico,
   ]);
   prontuario.id = resposta.inserirProntuario;
 
-  return medico;
+  return prontuario;
 }
 
 /*export async function alterarImagem(imagem, id) {
@@ -23,17 +23,17 @@ export async function inserirProntuario(medico) {
   return resposta.affectedRows;
 }*/
 
-export async function listarTodosMedicos() {
-  const comando = `SELECT crm,nome,id_especialidade FROM medico`;
+export async function listarTodosProntuarios() {
+  const comando = `SELECT id_prontuario, id_consulta, anamnese, resultado_exames, diagnostico from prontuario`;
 
   const [linhas] = await con.query(comando);
   return linhas;
 }
 
-export async function buscarPorId(crm) {
-  const comando = `SELECT crm,nome,id_especialidade FROM medico WHERE crm = ? `;
+export async function buscarPorId(id) {
+  const comando = `SELECT id_prontuario, id_consulta, anamnese, resultado_exames, diagnostico FROM prontuario WHERE id_prontuario = ? `;
 
-  const [linhas] = await con.query(comando, [crm]);
+  const [linhas] = await con.query(comando, [id]);
   return linhas[0];
 }
 
@@ -51,25 +51,29 @@ export async function buscarPorId(crm) {
 }
 */
 
-export async function removerMedico(crm) {
-  const comando = `DELETE FROM medico 
-             WHERE crm = ? `;
+export async function removerProntuario(id) {
+  const comando = `DELETE FROM prontuario 
+             WHERE id_prontuario = ? `;
 
-  const [resposta] = await con.query(comando, [crm]);
+  const [resposta] = await con.query(comando, [id]);
   return resposta.affectedRows;
 }
 
-export async function alterarMedico(crm, medico) {
-  const comando = `UPDATE login 
-          SET nome               = ?,
-              id_especialidade   = ?,
-             
-        WHERE crm        = ?`;
+export async function alterarProntuario(id, prontuario) {
+  const comando = `UPDATE prontuario 
+          SET 
+              id_consulta      = ?,
+              anamnese         = ?,
+              resultado_exames = ?,
+              diagnostico      = ?                       
+          WHERE id_prontuario  = ?`;
 
   const [resposta] = await con.query(comando, [
-    medico.nome,
-    medico.id_especialidade,
-    crm,
+    prontuario.id_consulta,
+    prontuario.anamnese,
+    prontuario.resultado_exames,
+    prontuario.diagnostico,
+    id,
   ]);
   return resposta.affectedRows;
 }
