@@ -1,23 +1,23 @@
 import multer from 'multer';
 import { Router } from 'express';
 import {
-  alterarMedico,
+  alterarClinica,
   buscarPorId,
-  inserirMedico,
-  listarTodosMedicos,
-  removerMedico,
-} from '../repository/medicoRepository.js';
+  inserirClinica,
+  listarTodosClinicas,
+  removerClinica,
+} from '../repository/clinicaRepository.js';
 
 const endpoint = Router();
 
 /*const upload = multer({ dest: 'storage/capasFilmes' });*/
 
-endpoint.post('/medico', async (req, resp) => {
+endpoint.post('/clinica', async (req, resp) => {
   try {
-    const novoMedico = req.body;
+    const novoClinica = req.body;
 
-    const medicoInserido = await inserirMedico(novoMedico);
-    resp.send(medicoInserido);
+    const clinicaInserido = await inserirClinica(novoClinica);
+    resp.send(clinicaInserido);
   } catch (err) {
     resp.status(400).send({
       erro: err.message,
@@ -25,9 +25,9 @@ endpoint.post('/medico', async (req, resp) => {
   }
 });
 
-endpoint.get('/medico', async (req, resp) => {
+endpoint.get('/clinica', async (req, resp) => {
   try {
-    const resposta = await listarTodosMedicos();
+    const resposta = await listarTodosClinicas();
     resp.send(resposta);
   } catch (err) {
     resp.status(400).send({
@@ -36,7 +36,7 @@ endpoint.get('/medico', async (req, resp) => {
   }
 });
 
-endpoint.get('/medico/busca', async (req, resp) => {
+endpoint.get('/clinica/busca', async (req, resp) => {
   try {
     const { nome } = req.query;
 
@@ -50,11 +50,11 @@ endpoint.get('/medico/busca', async (req, resp) => {
   }
 });
 
-endpoint.get('/medico/:crm', async (req, resp) => {
+endpoint.get('/clinica/:id', async (req, resp) => {
   try {
-    const crm = Number(req.params.crm);
+    const id = Number(req.params.id);
 
-    const resposta = await buscarPorId(crm);
+    const resposta = await buscarPorId(id);
 
     resp.send(resposta);
   } catch (err) {
@@ -64,11 +64,11 @@ endpoint.get('/medico/:crm', async (req, resp) => {
   }
 });
 
-endpoint.delete('/medico/:crm', async (req, resp) => {
+endpoint.delete('/clinica/:id', async (req, resp) => {
   try {
-    const { crm } = req.params;
+    const { id } = req.params;
 
-    const resposta = await removerMedico(crm);
+    const resposta = await removerClinica(id);
 
     resp.status(204).send();
   } catch (err) {
@@ -78,12 +78,12 @@ endpoint.delete('/medico/:crm', async (req, resp) => {
   }
 });
 
-endpoint.put('/medico/:crm', async (req, resp) => {
+endpoint.put('/clinica/:id', async (req, resp) => {
   try {
-    const { crm } = req.params;
-    const medico = req.body;
+    const { id } = req.params;
+    const clinica = req.body;
 
-    const resposta = await alterarMedico(crm, medico);
+    const resposta = await alterarClinica(id, clinica);
 
     resp.status(204).send();
   } catch (err) {
