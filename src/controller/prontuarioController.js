@@ -1,7 +1,11 @@
 import multer from 'multer';
 import { Router } from 'express';
 import {
-  inserirProntuario
+  alterarProntuario,
+  buscarPorId,
+  inserirProntuario,
+  listarTodosProntuarios,
+  removerProntuario,
 } from '../repository/prontuarioRepository.js';
 
 const endpoint = Router();
@@ -46,11 +50,11 @@ endpoint.get('/prontuario/busca', async (req, resp) => {
   }
 });
 
-endpoint.get('/prontuario/:crm', async (req, resp) => {
+endpoint.get('/prontuario/:id', async (req, resp) => {
   try {
-    const crm = Number(req.params.cpf);
+    const id = Number(req.params.id);
 
-    const resposta = await buscarPorId(crm);
+    const resposta = await buscarPorId(id);
 
     resp.send(resposta);
   } catch (err) {
@@ -60,11 +64,11 @@ endpoint.get('/prontuario/:crm', async (req, resp) => {
   }
 });
 
-endpoint.delete('/prontuario/:crm', async (req, resp) => {
+endpoint.delete('/prontuario/:id', async (req, resp) => {
   try {
-    const { crm } = req.params;
+    const { id } = req.params;
 
-    const resposta = await removerProntuario(crm);
+    const resposta = await removerProntuario(id);
 
     resp.status(204).send();
   } catch (err) {
@@ -74,12 +78,12 @@ endpoint.delete('/prontuario/:crm', async (req, resp) => {
   }
 });
 
-endpoint.put('/prontuario/:crm', async (req, resp) => {
+endpoint.put('/prontuario/:id', async (req, resp) => {
   try {
-    const { crm } = req.params;
+    const { id } = req.params;
     const prontuario = req.body;
 
-    const resposta = await alterarProntuario(crm, prontuario);
+    const resposta = await alterarProntuario(id, prontuario);
 
     resp.status(204).send();
   } catch (err) {
