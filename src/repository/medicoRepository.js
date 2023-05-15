@@ -58,9 +58,9 @@ export async function removerMedico(crm) {
 }
 
 export async function alterarMedico(crm, medico) {
-  const comando = `UPDATE login 
+  const comando = `UPDATE medico 
           SET nome               = ?,
-              id_especialidade   = ?,
+              id_especialidade   = ?
              
         WHERE crm        = ?`;
 

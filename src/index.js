@@ -6,8 +6,6 @@ import loginController from './controller/loginController.js';
 import especialidadeController from './controller/especialidadeController.js';
 import medicoController from './controller/medicoController.js';
 
-import produtoController from './controller/produtoController.js';
-
 const servidor = express();
 servidor.use(cors());
 servidor.use(express.json());

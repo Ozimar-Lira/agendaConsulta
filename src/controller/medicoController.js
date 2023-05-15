@@ -52,7 +52,7 @@ endpoint.get('/medico/busca', async (req, resp) => {
 
 endpoint.get('/medico/:crm', async (req, resp) => {
   try {
-    const crm = Number(req.params.cpf);
+    const crm = Number(req.params.crm);
 
     const resposta = await buscarPorId(crm);
 
