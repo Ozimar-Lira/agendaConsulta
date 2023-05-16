@@ -1,0 +1,104 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section {
+    background-color: #eeeded;
+    box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
+    height: 600px;
+    width: 1200px;
+    margin-top: 50px;
+    
+}
+
+header {
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+.button-container {
+    text-align: center;
+}
+
+.header-button {
+    display: inline-block;
+    margin: 150px 10px 0 0;
+    font-size: 16px;
+    border: none;
+    background-color: #f2f2f2;
+    color: #333;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+#button-mensagem {
+    background-color: aquamarine;
+}
+
+#button-agenda {
+    background-color: rgb(127, 229, 255);
+}
+
+#button-paciente {
+    background-color: rgb(175, 155, 209);
+}
+
+#button-paciente:hover, #button-agenda:hover, #button-mensagem:hover{
+    background-color: rgb(134, 134, 134);
+}
+
+.user-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    margin: 80px 150px 0 150px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+input[type="text"] {
+    font-size: 18px;
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    width: 80%;
+    max-width: 400px;
+    margin-left: 10px;
+}
+
+.appointment-info {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.appointment-info h2 {
+    margin-bottom: 10px;
+}
+
+.appointment-info p {
+    display: inline-block;
+    margin: 5px;
+}
+
+.marcado{
+    background: #aaaaaa;
+    border-radius: 15px;
+    margin: 0 250px 10px 250px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }

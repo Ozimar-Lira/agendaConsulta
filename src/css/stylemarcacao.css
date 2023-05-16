@@ -1,0 +1,70 @@
+/* Define a fonte e cor padrão do corpo do documento */
+body {
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+/* Define um estilo para o contêiner principal */
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Define um estilo para o cabeçalho principal */
+h1 {
+  font-size: 32px;
+  text-align: center;
+}
+
+/* Define um estilo para as etiquetas dos rótulos */
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+/* Define um estilo para as caixas de entrada */
+input[type="date"],
+input[type="text"],
+select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  margin-bottom: 15px;
+}
+
+/* Define um estilo para o botão de envio */
+input[type="submit"] {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* Define um estilo para o botão de envio ao passar o mouse sobre ele */
+input[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+button {
+  display: block;
+  margin-top: 20px;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: #008CBA;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+

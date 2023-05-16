@@ -1,0 +1,77 @@
+body {
+	font-family: Arial, sans-serif;
+    background-image: url(../img/fundo.jpg);
+    background-size: cover;
+    background-position: center;
+    }
+
+form {
+	background-color: #ffffff;
+	max-width: 400px;
+	margin: 0 auto;
+	padding: 20px;
+	border-radius: 5px;
+	box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+    margin-top: 150px;
+}
+
+h2 {
+	text-align: center;
+	margin-top: 0;
+}
+
+label {
+	display: block;
+	margin-bottom: 10px;
+}
+
+input[type="text"], input[type="password"] {
+	width: 100%;
+	padding: 10px;
+	border: 1px solid #cccccc;
+	border-radius: 5px;
+	margin-bottom: 20px;
+	box-sizing: border-box;
+}
+
+input[type="text"], input[type="password"]::placeholder{
+    text-align: center;
+}
+
+#cadastro-button {
+	background-color: #4320c4;
+	color: #ffffff;
+	padding: 10px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+#cadastro-button:hover {
+	background-color: #3e8e41;
+}
+
+button[type="submit"] {
+	background-color: #4320c4;
+	color: #ffffff;
+	padding: 10px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;	
+    
+}
+
+button[type="submit"]:hover {
+	background-color: #3e8e41;
+}
+
+p {
+	text-align: center;
+	margin-top: 20px;
+}
+
+.central{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

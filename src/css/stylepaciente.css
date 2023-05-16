@@ -1,0 +1,111 @@
+
+      body {
+        background-color: #f2f2f2;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+      #container {
+        max-width: 800px;
+        margin: 0 auto;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+      }
+      #foto {
+        display: inline-block;
+        vertical-align: top;
+        width: 200px;
+        height: 200px;
+        position: relative;
+      }
+      #foto img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 50%;
+      }
+      #foto input {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        margin: 10px;
+      }
+      #info {
+        display: inline-block;
+        vertical-align: top;
+        margin-left: 20px;
+        width: calc(100% - 240px);
+      }
+      h1 {
+        margin: 0;
+        font-size: 28px;
+        font-weight: bold;
+      }
+      label {
+        display: inline-block;
+        margin-top: 10px;
+        font-size: 16px;
+        font-weight: bold;
+        width: 150px;
+      }
+      input, select, textarea {
+        display: block;
+        margin-top: 10px;
+        padding: 5px;
+        font-size: 16px;
+        width: 100%;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+      }
+      input[type="file"] {
+        display: none;
+      }
+      #cpf_cep, #rua_numero {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 10px;
+      }
+      #cpf, #cep, #rua, #numero {
+        display: block;
+        width: 45%;
+        margin: 0px;
+      }
+      #complemento {
+        margin-top: 10px;
+      }
+      #historico {
+        margin-top: 20px;
+      }
+      h2 {
+        margin: 0;
+        font-size: 24px;
+        font-weight: bold;
+      }
+      textarea {
+        margin-top: 10px;
+        width: 100%;
+        height: 200px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        resize: vertical;
+        padding: 5px;
+        font-size: 16px;
+      }
+      button {
+        display: block;
+        margin-top: 20px;
+        padding: 10px;
+        font-size: 16px;
+        font-weight: bold;
+        background-color: #008CBA;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: #005f73;
+      }

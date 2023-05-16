@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Agendamento de Consulta</title>
+	<link rel="stylesheet" type="text/css" href="/css/stylemarcacao.css">
+</head>
+<body>
+	<div class="container">
+        <div id="foto">
+            <a href="cadastro.html"><button>Voltar</button></a>
+          </div>
+		<h1>Agendamento de Consulta</h1>
+		<form>
+			<label for="nome">Boas vindas "PACIENTE":</label><br>
+
+			<label for="data">Escolha a data do agendamento:</label>
+			<input type="date" id="data" name="data"><br>
+
+			<label for="especialidade">Escolha a especialidade do médico:</label>
+			<select id="especialidade" name="especialidade">
+				<option value="">Selecione uma especialidade</option>
+				<option value="cardiologia">Cardiologia</option>
+				<option value="dermatologia">Dermatologia</option>
+				<option value="ginecologia">Ginecologia</option>
+				<option value="neurologia">Neurologia</option>
+			</select><br>
+
+			<label for="cidade">Escolha a cidade do agendamento:</label>
+			<select id="cidade" name="cidade">
+				<option value="">Selecione um estado</option>
+          <option value="SP">São Paulo</option>
+          <option value="SB">São Bernado do Campo</option>
+          <option value="SA">Santo André</option>
+          <option value="Gu">Guarulhos</option>
+          <option value="SA">Santana de Parnaíba</option>
+          <option value="EM">Embu das Artes</option>
+          <option value="SZ">Suzano</option>
+			</select><br>
+
+			<input type="submit" value="Agendar">
+		</form>
+	</div>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="/css/stylehome.css">
+</head>
+
+<body>
+    <form>
+        <h2>Login</h2>
+        <input type="text" id="username" name="username" required placeholder="CRM/CPF">
+        <input type="password" id="password" name="password" required required placeholder="Senha">
+        <div class="central"><button type="submit" id="login-button">Entrar</button></div>
+        <p>Não tem uma conta? </p>
+        <div class="central"><button id="cadastro-button">Cadastrar</button></div>
+    </form>
+    <script src="/js/login.js"></script>
+    <script>
+        const loginForm = document.getElementById('login-form');
+        const usernameInput = document.getElementById('username');
+        const passwordInput = document.getElementById('password');
+
+        loginForm.addEventListener('submit', async (event) => {
+            event.preventDefault(); // Previne o comportamento padrão do form
+            const username = usernameInput.value;
+            const password = passwordInput.value;
+
+            try {
+                const response = await fetch('/login', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ username, password })
+                });
+
+                if (response.ok) {
+                    alert('Login bem-sucedido!');
+                    // Aqui você pode redirecionar o usuário para a página desejada
+                } else {
+                    alert('Credenciais inválidas. Tente novamente.');
+                }
+            } catch (error) {
+                console.error(error);
+                alert('Erro ao tentar fazer login. Tente novamente mais tarde.');
+            }
+        });
+    </script></body>
+
+</html>
